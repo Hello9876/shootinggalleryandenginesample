@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="your_score">Your Score: </string>
+    <string name="game_over">GAME OVER</string>
+    <string name="hello">Hello World, ShootingGalleryActivity!</string>
+    <string name="app_name">Shooting Gallery</string>
+</resources>

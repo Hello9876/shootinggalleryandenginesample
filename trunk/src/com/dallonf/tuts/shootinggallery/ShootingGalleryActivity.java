@@ -26,7 +26,10 @@ import org.anddev.andengine.ui.activity.BaseGameActivity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Vibrator;
+import android.view.Menu;
+import android.view.MenuItem;
 
 public class ShootingGalleryActivity extends BaseGameActivity {
 	
@@ -66,6 +69,19 @@ public class ShootingGalleryActivity extends BaseGameActivity {
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
 		return new Engine(new EngineOptions(true, ScreenOrientation.LANDSCAPE,
 				new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), mCamera));
+	}
+	
+	
+	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add("View Source");
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	@Override
+	public boolean onMenuItemSelected(int featureId, MenuItem item) {
+		Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://code.google.com/p/shootinggalleryandenginesample/"));
+		startActivity(intent);
+		return super.onMenuItemSelected(featureId, item);
 	}
 	
 	@Override
